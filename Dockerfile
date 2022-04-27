@@ -12,6 +12,9 @@ COPY . .
 # either manually or with a tool like "godep".)
 ENV CGO_ENABLED=0
 ENV GOOS=linux
+
+ENV GO111MODULE=on
+RUN go mod tidy
 RUN go build -v -o helloworld
  
 # Use a Docker multi-stage build to create a lean production image.
