@@ -10,8 +10,8 @@ COPY . .
 # Build the command inside the container.
 # (You may fetch or manage dependencies here,
 # either manually or with a tool like "godep".)
-ARG CGO_ENABLED=0
-ARG GOOS=linux
+ENV CGO_ENABLED=0
+ENV GOOS=linux
 RUN go build -v -o helloworld
  
 # Use a Docker multi-stage build to create a lean production image.
